@@ -20,50 +20,52 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-
-//@Composable
-//fun SignUpScreenUi(modifier: Modifier = Modifier) {
-//
-//}
+import androidx.compose.ui.unit.sp
 
 @Composable
-fun SignUpScreen(
+fun SignUpScreenUi(
     state: SignupState,
-    onEvent: (SignUpEvent) -> Unit,
+    event: (SignUpEvent) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Scaffold { padding ->
+    Scaffold { it ->
         Column(
-            modifier
+            modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
-                .padding(horizontal = 16.dp)
+                .padding(it)
+                .padding(16.dp)
                 .verticalScroll(rememberScrollState()),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Spacer(Modifier.height(48.dp))
             Text("Create Account", style = MaterialTheme.typography.headlineMedium)
 
-            EmailField(state.email) { onEvent(SignUpEvent.EmailChanged(it)) }
-            PasswordField(state.password) { onEvent(SignUpEvent.PasswordChanged(it)) }
+            EmailField(
+                value = state.email,
+                onChange = { event(SignUpEvent.EmailChanged(it)) }
+            )
+
+            PasswordField(
+                value = state.password,
+                onChange = { event(SignUpEvent.PasswordChanged(password = it))}
+            )
 
             Button(
-                onClick = { onEvent(SignUpEvent.Submit) },
-                modifier = Modifier.fillMaxWidth(),
+                onClick = {
+                    event(SignUpEvent.Submit)
+                },
                 enabled = !state.isLoading
             ) {
                 if (state.isLoading) {
-                    CircularProgressIndicator(
-                        modifier = Modifier.size(20.dp),
-                        strokeWidth = 2.dp
-                    )
+                    CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp)
                 } else {
                     Text("Sign Up")
                 }
             }
-
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
                 OutlinedButton(onClick = { /*TODO*/ }) { Text("Google") }
                 OutlinedButton(onClick = { /*TODO*/ }) { Text("Apple") }
