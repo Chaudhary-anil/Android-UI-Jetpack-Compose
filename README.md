@@ -1,1 +1,1 @@
-- [Signup Screen](signupscreenui/presentation/screen/signUpScreen)
+- [Signup Screen](app/src/main/java/com/example/signupscreenui/presentation/screen/signUpScreen/)
