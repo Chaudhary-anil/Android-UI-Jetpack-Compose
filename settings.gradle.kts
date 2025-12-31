@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "SignupScreenUi"
 include(":app")
+include(":app")
+ 
