@@ -41,21 +41,21 @@ fun PasswordField(
     value: String,
     onChange: (String) -> Unit
 ) {
-    var visibile by rememberSaveable { mutableStateOf(false) }
+    var visible by rememberSaveable { mutableStateOf(false) }
 
     OutlinedTextField(
         value = value,
         onValueChange = { onChange(it) },
         label = { Text("Password") },
         singleLine = true,
-        visualTransformation = if (visibile) VisualTransformation.None else PasswordVisualTransformation(),
+        visualTransformation = if (visible) VisualTransformation.None else PasswordVisualTransformation(),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
         trailingIcon = {
             IconButton(
-                onClick = { visibile = !visibile }
+                onClick = { visible = !visible }
             ) {
                 Icon(
-                    imageVector = if (visibile) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                    imageVector = if (visible) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                     contentDescription = "Toggle Password"
                 )
             }
