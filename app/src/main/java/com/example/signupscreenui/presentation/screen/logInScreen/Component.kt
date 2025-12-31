@@ -5,6 +5,7 @@ package com.example.signupscreenui.presentation.screen.logInScreen
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Icon
@@ -31,6 +32,7 @@ fun EmailField(
         onValueChange = { onChange(it) },
         label = { Text("Email") },
         singleLine = true,
+        trailingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "Email")},
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         modifier = Modifier.fillMaxWidth()
     )
