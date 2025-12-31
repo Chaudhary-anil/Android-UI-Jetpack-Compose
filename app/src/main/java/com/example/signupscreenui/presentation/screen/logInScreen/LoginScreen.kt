@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.signupscreenui.presentation.screen.signUpScreen.EmailField
 
 @Composable
 fun LoginScreenUi(modifier: Modifier = Modifier) {
@@ -30,6 +31,7 @@ fun LoginScreenUi(modifier: Modifier = Modifier) {
         ) {
             Spacer(Modifier.height(20.dp))
             Text("Login", style = MaterialTheme.typography.headlineLarge)
+            Spacer(Modifier.height(100.dp))
         }
     }
 }
