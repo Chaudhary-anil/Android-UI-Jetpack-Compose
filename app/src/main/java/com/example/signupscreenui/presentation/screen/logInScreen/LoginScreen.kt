@@ -49,7 +49,11 @@ fun LoginScreenUi(
         ) {
             Column(
                 modifier = Modifier
+                    .fillMaxWidth()
                     .weight(1f)
+                    .verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacer(Modifier.height(20.dp))
                 Text("Login", style = MaterialTheme.typography.headlineLarge)
@@ -76,7 +80,9 @@ fun LoginScreenUi(
                 Text("Forgot Password?", textDecoration = TextDecoration.Underline)
             }
 
-            Column {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text("Don't have an account?")
                 Text(
                     "Sign Up",
