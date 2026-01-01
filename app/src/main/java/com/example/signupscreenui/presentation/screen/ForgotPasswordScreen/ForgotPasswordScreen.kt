@@ -35,7 +35,7 @@ fun ForgotPasswordScreenUi(
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Top
         ) {
             Spacer(Modifier.height(24.dp))
             Text("Forgot Password?", style = MaterialTheme.typography.headlineLarge, color = Color.Blue)
@@ -46,7 +46,7 @@ fun ForgotPasswordScreenUi(
                 style = MaterialTheme.typography.bodySmall
             )
             EmailField( value = state.email ) { event(ForgotPasswordEvent.EmailChanged(it)) }
-
+            Spacer(Modifier.height(8.dp))
             Button(
                 onClick = {},
                 shape = RoundedCornerShape(8.dp)
@@ -68,7 +68,7 @@ fun ForgotPasswordScreenUi(
                 Text(
                     text = "Login",
                     textDecoration = TextDecoration.Underline,
-                    color = Color.Yellow
+                    color = Color.Green
                 )
             }
         }
