@@ -5,6 +5,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.signupscreenui.presentation.screen.ForgotPasswordScreen.ForgotPasswordScreenUi
+import com.example.signupscreenui.presentation.screen.ForgotPasswordScreen.ForgotPasswordViewModel
 import com.example.signupscreenui.presentation.screen.logInScreen.LoginScreenUi
 import com.example.signupscreenui.presentation.screen.logInScreen.LoginViewModel
 import com.example.signupscreenui.presentation.screen.signUpScreen.SignUpScreenUi
@@ -23,6 +25,10 @@ fun AppNavigation() {
         composable<SignUpScreenRoute> {
             val viewModel: SignUpViewModel = viewModel()
             SignUpScreenUi(state = viewModel.state, event = viewModel :: onEvent)
+        }
+        composable<ForgotPasswordRoute> {
+            val viewModel: ForgotPasswordViewModel = viewModel()
+            ForgotPasswordScreenUi(state = viewModel.state, event = viewModel :: onEvent)
         }
     }
 }
