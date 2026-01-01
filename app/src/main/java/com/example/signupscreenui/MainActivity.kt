@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.signupscreenui.presentation.navigation.AppNavigation
 import com.example.signupscreenui.presentation.screen.logInScreen.LoginScreenUi
 import com.example.signupscreenui.presentation.screen.logInScreen.LoginViewModel
 import com.example.signupscreenui.presentation.screen.signUpScreen.SignUpScreenUi
@@ -18,16 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SignupScreenUiTheme {
-                val viewModel: LoginViewModel = viewModel()
-//                val viewModel: SignUpViewModel = viewModel()
-//                SignUpScreenUi(
-//                    state = viewModel.state,
-//                    event = viewModel :: onEvent
-//                )
-                LoginScreenUi(
-                    state = viewModel.state,
-                    event = viewModel :: onEvent
-                )
+                AppNavigation()
             }
         }
     }

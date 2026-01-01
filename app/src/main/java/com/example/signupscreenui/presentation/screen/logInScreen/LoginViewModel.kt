@@ -17,18 +17,19 @@ class LoginViewModel : ViewModel(){
             is LoginEvent.EmailChanged -> {
                 state = state.copy(email = event.email)
             }
-            LoginEvent.ForgotPassword -> {
-
-            }
+//            LoginEvent.ForgotPassword -> {
+//
+//            }
             LoginEvent.Login -> login()
             is LoginEvent.PasswordChanged -> {
                 state = state.copy(password = event.password)
             }
-            LoginEvent.SignUp -> {
-
-            }
+//            LoginEvent.SignUp -> {
+//
+//            }
         }
     }
+
 
     private fun login() {
         viewModelScope.launch {

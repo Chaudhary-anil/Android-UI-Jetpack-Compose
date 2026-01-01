@@ -29,11 +29,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import com.example.signupscreenui.presentation.navigation.SignUpScreenRoute
 
 @Composable
 fun LoginScreenUi(
     state: LoginState,
-    event: (LoginEvent) -> Unit
+    event: (LoginEvent) -> Unit,
+    vm: LoginViewModel,
+    navController: NavHostController
 ) {
     val context = LocalContext.current
 
@@ -95,7 +99,7 @@ fun LoginScreenUi(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
                         ) {
-                            Toast.makeText(context, "Sign Up Clicked!", Toast.LENGTH_SHORT).show()
+                            navController.navigate(SignUpScreenRoute)
                         }
                 )
             }
