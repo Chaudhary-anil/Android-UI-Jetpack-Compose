@@ -7,3 +7,6 @@ object SignUpScreenRoute
 
 @Serializable
 object LoginScreenRoute
+
+@Serializable
+object ForgotPasswordRoute

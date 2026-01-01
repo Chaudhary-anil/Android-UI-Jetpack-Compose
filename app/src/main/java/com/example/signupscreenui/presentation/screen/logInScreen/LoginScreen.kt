@@ -30,6 +30,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.signupscreenui.presentation.navigation.ForgotPasswordRoute
 import com.example.signupscreenui.presentation.navigation.SignUpScreenRoute
 
 @Composable
@@ -81,7 +82,12 @@ fun LoginScreenUi(
                         Text("Login")
                     }
                 }
-                Text("Forgot Password?", textDecoration = TextDecoration.Underline)
+                Text(
+                    "Forgot Password?",
+                    textDecoration = TextDecoration.Underline,
+                    modifier = Modifier
+                        .clickable { navController.navigate(ForgotPasswordRoute) }
+                )
             }
 
             Column(
